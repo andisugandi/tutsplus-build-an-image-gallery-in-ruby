@@ -1,12 +1,9 @@
 require "sequel"
 
-configure :development do
-  ENV["RACK_ENV"] ||= "development"
-  DB = Sequel.connect "sqlite://db/#{ENV["RACK_ENV"]}.sqlite3"
-end
-
-configure :production do
+if ENV["RACK_ENV"] == :production
   DB = Sequel.connect(ENV['DATABASE_URL'] || 'postgres://localhost/imagegallerydb')
+else
+  DB = Sequel.connect "sqlite://db/#{ENV["RACK_ENV"]}.sqlite3"
 end
 
 DB.create_table :images do

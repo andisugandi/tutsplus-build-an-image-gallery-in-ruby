@@ -30,6 +30,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.5)
     minitest (5.6.1)
+    pg (0.18.4)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -63,6 +64,7 @@ DEPENDENCIES
   carrierwave
   carrierwave-sequel
   haml
+  pg
   pry-byebug
   puma
   rmagick
@@ -70,3 +72,6 @@ DEPENDENCIES
   sinatra
   sqlite3
   time_ago_in_words
+
+BUNDLED WITH
+   1.12.5
